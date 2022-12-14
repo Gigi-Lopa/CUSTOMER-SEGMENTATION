@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+<body>
+    <div class="creditionals-content">
+        {% csrf_token %}
+        <form action="" class="cd-form" id="loginForm" method="post">
+            <h2>LOGIN </h2>
+            <div class="cd-row">
+                <label for="username"  class="required">Username</label>
+                <input type="text" name="username" id="username">
+                <div class="err-div hidden">
+                    <span class="bi bi-exclamation-triangle-fill"> Username required</span>
+                </div>
+            </div>
+            <div class="cd-row">
+                <label for="password" class="required">Password</label>
+                <input type="password" name="password" id="password">
+                <div class="err-div hidden">
+                    <span class="bi bi-exclamation-triangle-fill"> Password required</span>
+                </div>
+                <div class="login-err-div hidden">
+                    <span class="bi bi-exclamation-triangle-fill"> Login error invalid details</span>
+                </div>
+                
+            </div>
+
+            <a href="/create/account/">Create Account &quest; </a>
+            <button type="submit" class="btn">Log In</button>
+        </form>
+        
+    </div>
+
+    <script src="{% static '/vendors/jquery/jquery.min.js ' %}"></script>
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/js/getCookies.js' %}"></script>
+    <script src="{% static '/js/handleLogin.js' %}"></script>
+</body>
+</html>

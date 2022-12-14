@@ -1,0 +1,247 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Light.ttf);
+}
+@font-face {
+    font-family: "Poppins Bold";
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+*{
+    font-family: "Poppins";
+}
+
+.nav{
+    width: 100%;
+    padding-top: 15px;
+    background-color: transparent;
+    position: fixed;
+}   
+
+.user-name,
+.admin{
+    width: 50%;
+}
+.user-name img{
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.user-name h4{
+    font-family: "Poppins Bold";
+    color: #101f36;
+}
+.admin a{
+    font-family: "Poppins Bold";
+    color: white;
+    margin-right: 15px;
+    float: right;
+}
+.main-content{
+    width: 100%;
+    height: 100vh;
+}
+.main-content .content{
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+}
+.info,
+.showcase{
+    width: 50%;
+    height: 100%;
+}
+.info{
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+}
+.info h2{
+
+    color: #101f36;
+    font-family: "Poppins Bold";
+
+}
+.showcase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #101f36;
+}
+.showcase img{
+    width: 80%;
+    height: auto;
+}
+.submit-file{
+    display: flex;
+    flex-direction: column;
+}
+input[type = "file"]{
+    font-family: "Poppins Bold";
+    width: 100%;
+}
+.upload{
+    padding: 10px 0;
+    background-color: #101f36;
+    border: none;
+    color: white;
+    font-family: "Poppins Bold";
+    border-radius: 10px;
+    margin-top: 25px;
+    transition: all ease-in-out 0.3s;
+}
+.upload:hover{
+    background-color: #1a355e;
+}
+.upload.disabled{
+    background-color: #ccc;
+    color: #101f36;
+}
+/* RESULTS PAGE */
+.results-content{
+    width: 100%;
+    background-color: #101f36;
+    height: fit-content !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.results-nav{
+    background-color: #101f36;
+    color: #fff;
+    position: unset;
+}
+.results-nav .user-name h4{
+    color: #fff;
+}
+.results-nav .admin a {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.results{
+    width: 75%;
+    padding-top: 50px;
+}
+.file-name{
+    color: #fff;
+    margin-bottom: 35px;
+}
+.results h4,
+.file-name{
+    font-family: "Poppins Bold";
+    text-align: center;
+}
+#CustomersChart{
+    background-color: white;
+    color: #101f36;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+
+}
+.result-card{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+.fixed-img{
+    height: 50vh;
+    overflow-y: scroll;
+}
+.fixed-table{
+    height: 100vh;
+    overflow-y: scroll;    
+}
+.result-card h4,
+.result-card p,
+.result-card ul{
+    padding: 25px;
+}
+.result-card ul li{
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+.cluster-label{
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    color: #fff;
+    margin-right: 5px;
+}
+thead tr{
+    background-color: #101f36;
+    color: #fff;
+    font-family: "Poppins Bold";
+    padding: 10px 25px;
+}
+.creditionals-content{
+    background-color: #101f36;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cd-row{
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+}
+.cd-row input{
+    padding: 5px 10px;
+    border: 2px solid rgb(33, 120, 235);
+}
+.cd-row input:focus{
+    outline: none;
+}
+#loginForm{
+    width: 350px;
+    padding: 25px 10px;
+}
+.cd-form h2{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.cd-form button,
+.ca-form button
+{
+    margin-top: 15px;
+    width: 100%;
+    background-color: rgb(33, 120, 235);
+    color: #101f36;
+    font-family: "Poppins Bold";
+    padding: 5px 0px;
+    border-color: rgb(33, 120, 235);
+    border-radius: 10px;
+}
+.cd-form a{
+    text-decoration: none;
+    color: rgb(33, 120, 235);
+}
+.ca-form{
+    width: 350px;
+    padding: 25px 10px;
+}
+.required::after{
+    content: "*";
+    color: red;
+    font-weight: 400;
+    margin-left: 5px;
+}
+.err-div,
+.login-err-div{
+    margin-top: 5px;
+    color: red;
+    font-family: "Poppins Bold";
+}
+.hidden{
+    display: none;
+}

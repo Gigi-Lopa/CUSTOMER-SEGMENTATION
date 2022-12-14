@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+    <body>
+        <div class="creditionals-content">
+            {% csrf_token %}
+            <form action="/create/343/account/" class="ca-form wd-lg" method="post" id ="createAccountForm">
+                <h2>Create Account</h2>
+                <div class="cd-row">
+                    <label for="username" class="required">Username</label>
+                    <input type="text" name="username" id="username">
+                    <div class="err-div hidden" id="username-err">
+                        <span class="bi bi-exclamation-triangle-fill" > A valid Username is required</span>
+                    </div>
+                </div>
+                <div class="cd-row">
+                    <label for="email" class="required">Email</label>
+                    <input type="email" name="email" id="email">
+                    <div class="err-div hidden">
+                        <span class="bi bi-exclamation-triangle-fill"> Email is required</span>
+                    </div>
+                </div>
+                <div class="cd-row">
+                    <label for="password" class="required">Password</label>
+                    <input type="password" name="password" id="password">     
+                    <div class="err-div hidden">
+                        <span class="bi bi-exclamation-triangle-fill"> Provide a valid password</span>
+                    </div>
+                </div>
+                <div class="cd-row">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword">
+                    
+                    <div class="err-div hidden password-err">
+                        <span class="bi bi-exclamation-triangle-fill"> Passwords don't match</span>
+                    </div>
+                </div>
+                <button class="btn"> Create Account</button>
+            </form>
+        </div>
+        
+    <script src="{% static '/vendors/jquery/jquery.min.js ' %}"></script>
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/js/getCookies.js' %}"></script>
+    <script src="{% static '/js/handleCreateAccount.js' %}"></script>
+
+    </body>
+</html>

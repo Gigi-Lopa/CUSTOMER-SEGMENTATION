@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+<body>
+  
+    <div class="main-content">
+        <div class="nav">
+            <div class="user-name">
+                <h4> <img src="{% static '/images/profile-img1.jpg'%}" alt="" class="img-fluid"> {{ username }}</h4>
+            </div>
+            <div class="admin">
+                <a href="/admin/" target="_blank">Admin</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="info">
+                <div class="container">
+                    <h2>Customer Segmentation System</h2>
+                    <p>Drag and drop a Customer csv file
+                        and cluster your clients from the most loyal to the least loyal.</p> 
+                    {% csrf_token %}
+                    <form method="post" class="submit-file" action="/predict/csv/" enctype="multipart/form-data">
+                        <input type="file" name="dataset" id = "dataset" required accept=".xlsx">
+                        <button type="submit" class="upload">Upload</button>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="showcase">
+                <img src="{% static '/images/12eca-machine-learning.gif'%}" class="img-fluid" alt="" >
+            </div>
+        </div>
+    </div>
+    <script src="{% static '/vendors/jquery/jquery.min.js ' %}"></script>
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

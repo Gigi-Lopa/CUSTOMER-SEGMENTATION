@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css'%}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">    
+    <link rel="stylesheet" href="{% static '/vendors/aos/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+<body onload="genChart( {{ purchase_data }}, {{ results }} )">
+
+    <div class="main-content results-content">
+        <div class="nav results-nav">
+            <div class="user-name">
+                <h4> <img src="{% static '/images/profile-img1.jpg'%}" alt="" class=""> {{ username }}</h4>
+            </div>
+            <div class="admin">
+                <a href="/home/">Home</a>
+            </div>
+        </div>
+        <div class="results">
+            <h2 class="file-name">{{ filename }}</h2>
+    
+            <div class="result-card" data-aos="fade-up">
+                <h4>Diagram 1</h4>
+                <div class="result-img" >
+                    {% block content %}
+                        {% if purchase_img_graph %}
+                            <img src="data:image/png;base64, {{ purchase_img_graph | safe }}" width = "100%" height= "auto" alt="">
+                        {% endif %}
+                 </div>
+                <p>Amount of products sold per month</p>
+            </div>  
+            <canvas id="CustomersChart"  data-aos = "fade-up" data-aos-delay = "100">
+    
+    
+            </canvas>
+          
+            <div class="result-card "  data-aos = "fade-up" data-aos-delay = "200">
+                <h4>Diagram 3</h4>
+                <div class="result-img fixed-img">
+                        {% if clusters_graph %}
+                            <img src="data:image/png;base64, {{ clusters_graph | safe }}" alt=""  width ="100%">
+                        {% endif %}
+                    {% endblock content %}  
+                </div>
+                <ul>
+                    <li><b style="background-color: red;" class="cluster-label">Cluster 0 </b> It belongs to the "Loyal Customers" segment as they Haven’t purchased for some time, but used to purchase frequently and spent a lot. </li>
+                    <li><b style="background-color: lightseagreen;" class="cluster-label">Cluster 1 </b> It can be interpreted as "Almost Lost". They purchase recently. However they do not purchase frequently and do not spent a lot.</li> 
+                    <li><b style="background-color: limegreen;" class="cluster-label">Cluster 2 </b> It can be interpreted as "Lost Cheap Customers". Their last purchase is long ago, purchased very few and spent little .</li>
+                    <li><b style="background-color: purple;" class="cluster-label">Cluster 3 </b> It belongs to the "Best Customers" segment which we saw earlier as they purchase recently, frequent buyers, and spent the most </li>
+                    <li><b style="background-color: orangered;" class="cluster-label">Cluster 4 </b> It belongs to the "Big Spender" segment which we saw earlier as they purchase rarely, and spent the most </li>
+                    
+                </ul>            
+            </div>
+            
+            <div class="result-card"  data-aos = "fade-up" data-aos-delay = "300">
+                <div class="table-responsive fixed-table">
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">Customer Id</th>
+                            <th scope="col">Cluster</th>
+                          </tr>
+                        </thead>
+                        <tbody class="result-clusters">
+            
+                      </table>
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+    
+    <script src="{% static '/vendors/jquery/jquery.min.js ' %}"></script>
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/js/chart-js.js' %}"></script>
+    <script src="{% static '/vendors/aos/aos.js' %}"></script>
+    <script src="{% static '/js/handleResults.js' %}"></script>
+</body>
+</html>
